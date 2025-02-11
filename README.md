@@ -1,4 +1,5 @@
 # Form Validator Projesi
+<img width="854" alt="Ekran Resmi 2025-02-11 06 13 11" src="https://github.com/user-attachments/assets/35f84ad6-0c07-439f-a0e1-2e3bbd4ba50e"  />
 
 Bu proje, modern web formları için kapsamlı bir doğrulama (validation) sistemi sunar. Bootstrap ve vanilla JavaScript kullanılarak geliştirilmiştir.
 
