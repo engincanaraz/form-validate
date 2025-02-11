@@ -51,6 +51,29 @@ chechRequired = (input) => {
   });
 };
 
+function chechLength(input,min,max){
+  if(input.value.length < min){
+    error(input, `${input.id} en az ${min} karakter olmalıdır.`);
+  }else if(input.value.length > max){
+    error(input, `${input.id} en fazla ${max} karakter olmalıdır.`);
+  }else{
+    success(input);
+  }
+}
+function chechPasswords(input1,input2){
+  if(input1.value !== input2.value){
+    error(input2, "Parolalar eşleşmiyor.");
+  }
+}
+
+function chechPhone(input){
+  const phoneRegex = /^\d{10}$/;
+  if(phoneRegex.test(input.value.trim())){
+    success(input);
+  }else{
+    error(input, "Geçerli bir telefon numarası giriniz");
+  }
+}
 // Form gönderildiğinde çalışacak event listener
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // Formun varsayılan gönderim davranışını engelliyoruz
@@ -58,5 +81,9 @@ form.addEventListener("submit", (e) => {
   // Tüm kontrolleri yapıyoruz
   chechRequired([username, email, password, rePassword]); // Boş alan kontrolü
   chechEmail(email); // Email format kontrolü
+  chechLength(username,7,15);
+  chechLength(password,6,12);
+  chechPasswords(password,rePassword);
+   chechPhone(phone);
 });
 
